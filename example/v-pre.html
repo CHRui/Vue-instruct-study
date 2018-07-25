@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-pre&v-cloak&v-once 指令</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>v-pre&v-cloak&v-once 实例</h1>
+    <hr>
+    <div id="app">
+       <div v-pre> {{message}} </div>
+       <div v-cloak>渲染完后才显示</div>
+       <div v-once>{{message}}</div> <!-- 只在第一次渲染显示，第二次不进行双向绑定渲染 -->
+       <div><input type="text" v-model="message"/></div>
+       <div>{{message}}</div>
+         
+    </div>
+
+</body>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world'
+        }
+    })
+</script>
+
+
+</html>
